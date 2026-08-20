@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #176df4;
+  --color-thrive-blue: #176df4;
+  --color-thrive-blue-dark: #0845a7;
+  --color-thrive-ink: #08111f;
+  --color-thrive-paper: #edf3ff;
+  --color-thrive-soft: #dbe8ff;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink { animation: blink 1s step-end infinite; }
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+body {
+  background: #edf3ff;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes platform-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.platform-track {
+  animation: platform-marquee 24s linear infinite;
+}
+
+.platform-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
