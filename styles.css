@@ -28,6 +28,17 @@ h1,h2,h3,p { margin-top:0; }.hero h1 { margin:22px 0 21px; font:500 clamp(4.6rem
 @media (max-width:560px) { .site-header { padding:16px 20px; }.brand { font-size:10px; }.brand img { width:30px; height:30px; }.nav-cta { font-size:8px; }.nav-cta b { width:28px; height:28px; }.hero { min-height:760px; padding:130px 20px 28px; }.hero h1 { margin-top:18px; font-size:clamp(3.75rem,16.2vw,5.2rem); }.hero-intro { max-width:290px; font-size:13px; }.hero-actions { flex-direction:column; gap:22px; margin-top:25px; }.hero-note { display:none; }.hero-status { font-size:7px; }.orbit-one { width:130vw; top:17%; }.orbit-two { width:108vw; top:25%; }.float-card { width:116px; padding:6px; }.card-window { min-height:99px; }.float-card--north { top:17%; left:-12%; }.float-card--west { top:55%; left:-13%; }.float-card--east { top:16%; right:-12%; }.float-card--south { right:-6%; bottom:11%; }.star-a { top:17%; left:18%; }.star-b { right:17%; bottom:32%; }.ticker span { padding:14px 17px; font-size:1.15rem; }.intro h2,.section-heading h2,.statement h2,.proof h2 { font-size:clamp(3.1rem,14.5vw,4.8rem); }.intro-copy { font-size:13px; }.system-rail { display:flex; overflow-x:auto; margin-right:-20px; margin-left:-20px; padding:0 20px 10px; border:0; background:transparent; scroll-snap-type:x mandatory; }.system-card { flex:0 0 255px; min-height:280px; border:1px solid #395b91; scroll-snap-align:start; }.statement-panel { min-height:530px; }.statement h2 { font-size:3.5rem; }.statement-image { min-height:350px; }.work-grid { gap:12px; }.work-item { min-height:365px; }.work-item h3 { font-size:4.2rem; }.proof h2 { font-size:3.15rem; }.contact h2 { font-size:clamp(3.7rem,15vw,5rem); }.contact > p:not(.eyebrow) { font-size:14px; }.contact footer { font-size:7px; }.button { font-size:8px; }.button b { width:29px; height:29px; } }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }
 
+/* Keep the complete prism composition inside the statement frame. */
+.statement-image img { object-position:80% 50%; }
+
+/* Pull the desktop hero cards away from the viewport edges. */
+@media (min-width:901px) {
+  .float-card--north { left:12%; }
+  .float-card--west { left:9%; }
+  .float-card--east { right:10%; }
+  .float-card--south { right:18%; }
+}
+
 /* Eikomp project imagery in the first two hero cards. */
 .window-eikomp { padding:0; background:#e8eaed; }
 .window-eikomp img { display:block; width:100%; height:100%; object-fit:cover; filter:saturate(.96) contrast(1.04); transform:scale(1.08); transform-origin:60% 50%; }
