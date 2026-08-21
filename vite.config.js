@@ -10,11 +10,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(rootDir, 'index.html'),
-        webDesign: resolve(rootDir, 'web-design.html'),
+        websiteRedesign: resolve(rootDir, 'website-redesign.html'),
       },
     },
   },
   optimizeDeps: {
-    entries: ['index.html', 'web-design.html'],
+    entries: ['index.html', 'website-redesign.html'],
   },
 })
